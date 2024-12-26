@@ -20,15 +20,15 @@ try:
     time.sleep(4)  # Allow page to load
 
     # Step 2: Enter Username
-    username_field = driver.find_element(By.NAME, "loginfmt")  # Adjust if needed
-    username = "My_username_here"  # Replace with your username
+    username_field = driver.find_element(By.NAME, "loginfmt")  
+    username = "My_username_here"  # Replace with username
     username_field.send_keys(username)
     username_field.send_keys(Keys.RETURN)
     time.sleep(2)  # Allow transition to password field
 
     # Step 3: Enter Password
-    password_field = driver.find_element(By.NAME, "passwd")  # Adjust if needed
-    password = "My_password_here"  # Replace with your password
+    password_field = driver.find_element(By.NAME, "passwd")  
+    password = "My_password_here"  # Replace with password
     password_field.send_keys(password)
     password_field.send_keys(Keys.RETURN)
     time.sleep(15)  # Allow for login process

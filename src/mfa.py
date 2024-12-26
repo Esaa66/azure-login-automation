@@ -8,7 +8,7 @@ import time
 # Path to Edge WebDriver
 edge_driver_path = r"C:\Users\Ahmad\Downloads\edgedriver_win64\msedgedriver.exe"
 
-# Replace this with your TOTP secret key from the authenticator app
+# Replace this with TOTP secret key from the authenticator app
 totp_secret = "My_TOTP_SECRET_HERE"
 
 def perform_mfa(driver):
@@ -19,15 +19,15 @@ def perform_mfa(driver):
         print(f"Generated TOTP: {mfa_code}")
 
         # Wait for the MFA input field to appear
-        time.sleep(5)  # Adjust based on your application's behavior
+        time.sleep(5)  # Adjust based on application's behavior
 
         # Locate the MFA input field
-        mfa_input = driver.find_element(By.NAME, "mfaCode")  # Adjust selector as needed
+        mfa_input = driver.find_element(By.NAME, "mfaCode") 
         mfa_input.send_keys(mfa_code)
         mfa_input.send_keys(Keys.RETURN)
 
         # Wait for the login process to complete
-        time.sleep(5)  # Adjust as needed
+        time.sleep(5) 
         print("MFA code submitted successfully!")
     except Exception as e:
         print(f"An error occurred during MFA submission: {e}")
